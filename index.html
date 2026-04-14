@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>我的程式種子 - 學習歷程</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0; 
+      background: #fff;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    #timeline-canvas { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: 100%;
+      z-index: 10;
+      background: transparent;
+      transition: flex 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+      pointer-events: none; /* 讓點擊可以穿透容器 */
+    }
+    #timeline-canvas canvas {
+      pointer-events: auto; /* 但畫布本身要接收點擊 */
+    }
+    #display-area { 
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100vw; 
+      height: 100%;
+      z-index: 1;
+    }
+    iframe { 
+      width: 100%; 
+      height: 100%; 
+      border: none; 
+    }
+  </style>
+</head>
+<body>
+  <div id="timeline-canvas"></div>
+  <div id="display-area">
+    <iframe id="project-frame" src="about:blank"></iframe>
+  </div>
+  <script src="sketch.js"></script>
+</body>
+</html>
